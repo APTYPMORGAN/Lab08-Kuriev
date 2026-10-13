@@ -10,5 +10,5 @@
 3. Передача параметров в метод
 4. Метод void, который ничего не возвращает
 
-![Результат](img/result_Lab08_Фамилия.png)
-![Git](img/git_Lab08_Фамилия.png)
+![Результат](img/result_Lab08_Kuriev.png)
+![Git](img/git_Lab08_Kuriev.png)
