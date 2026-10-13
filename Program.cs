@@ -40,15 +40,17 @@
 //     Console.WriteLine(IsPrime(i));
 // }
 
-int num1 = ReadPositive("Введите первое число: ");
-int num2 = ReadPositive("Введите второе число: ");
-int sum = num1 + num2;
-Console.WriteLine($"Сумма ваших чисел: {sum}");
+// int num1 = ReadPositive("Введите первое число: ");
+// int num2 = ReadPositive("Введите второе число: ");
+// int sum = num1 + num2;
+// Console.WriteLine($"Сумма ваших чисел: {sum}");
+
 
 static void PrintLine()
 {
     Console.WriteLine("^_^");
 }
+
 
 static void PrintHeader(string title)
 {
@@ -57,15 +59,18 @@ static void PrintHeader(string title)
     PrintLine();
 }
 
+
 static int Max(int a, int b)
 {
     if (a > b) { return a; } else { return b; }
 }
 
+
 static bool IsEven(int n)
 {
     return n % 2 == 0;
 }
+
 
 static int SumArray(int[] arr)
 {
@@ -77,6 +82,7 @@ static int SumArray(int[] arr)
     return sum;
 }
 
+
 static double Average(int[] arr)
 {
     int sum = 0;
@@ -86,6 +92,7 @@ static double Average(int[] arr)
     }
     return (double)sum / arr.Length;
 }
+
 
 static int CountGreater(int[] arr, int limit)
 {
@@ -97,10 +104,12 @@ static int CountGreater(int[] arr, int limit)
     return counter;
 }
 
+
 static double ToFahrenheit(double celsius)
 {
     return celsius * 9 / 5 + 32;
 }
+
 
 static long Factorial(int n)
 {
@@ -112,6 +121,7 @@ static long Factorial(int n)
     return res;
 }
 
+
 static bool IsPrime(int n)
 {
     int counter2 = 0;
@@ -122,12 +132,13 @@ static bool IsPrime(int n)
     return counter2 == 0;
 }
 
+
 static int ReadPositive(string message)
 {
     while (true)
     {
         Console.Write(message);
-        
+
         int number = Convert.ToInt32(Console.ReadLine());
 
         if (number > 0)
@@ -138,3 +149,77 @@ static int ReadPositive(string message)
         Console.WriteLine("Ошибка! Число должно быть строго больше 0.");
     }
 }
+
+
+// int select = 9;
+// while (select != 0)
+// {
+//     Console.WriteLine("");
+//     Console.WriteLine("Меню-калькулятор");
+//     Console.WriteLine("");
+//     Console.WriteLine("1 - сумма двух чисел");
+//     Console.WriteLine("2 - больше из двух чисел");
+//     Console.WriteLine("3 - факториал");
+//     Console.WriteLine("0 - выход");
+//     Console.WriteLine("");
+//     Console.Write("Выберите операцию: ");
+//     select = Convert.ToInt32(Console.ReadLine());
+//     switch (select)
+//     {
+//         case 1:
+//             {
+//                 Console.Write("Введите первое число: ");
+//                 int num1 = Convert.ToInt32(Console.ReadLine());
+//                 Console.Write("Введите второе число: ");
+//                 int num2 = Convert.ToInt32(Console.ReadLine());
+//                 Console.WriteLine("");
+//                 Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+//                 break;
+//             }
+//         case 2:
+//             {
+//                 Console.Write("Введите первое число: ");
+//                 int num1 = Convert.ToInt32(Console.ReadLine());
+//                 Console.Write("Введите второе число: ");
+//                 int num2 = Convert.ToInt32(Console.ReadLine());
+//                 Console.WriteLine("");
+//                 Console.WriteLine($"Большое число из {num1} и {num2}: {Max(num1, num2)}");
+//                 break;
+//             }
+//         case 3:
+//             {
+//                 Console.Write("Введите число: ");
+//                 int num1 = Convert.ToInt32(Console.ReadLine());
+//                 Console.WriteLine("");
+//                 Console.WriteLine($"{num1}! = {Factorial(num1)}");
+//                 break;
+//             }
+//         default:
+//             {
+//                 Console.WriteLine("");
+//                 Console.WriteLine("Нет такого пункта");
+//                 break;
+//             }
+//     }
+// }
+
+
+static int Gcd(int a, int b)
+{
+    while (b != 0)
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+
+static int Lcm(int a, int b)
+{
+    return a / Gcd(a, b) * b;
+}
+
+Console.WriteLine(Gcd(48, 18));
+Console.WriteLine(Lcm(4, 6));
